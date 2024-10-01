@@ -1,0 +1,32 @@
+spring.application.name: authentication
+logging.level.org.springframework.web: debug
+
+broker:
+  exchanges:
+    abc:
+      name: abc
+      routingKeyWelcome: rWelcome
+      routingKeyNotification: rNotification
+  queues:
+    welcome:
+      name: default.welcome
+      durable: true
+      autoDelete: false
+      exclusive: false
+    notification:
+      name: default.notification
+      durable: true
+      autoDelete: false
+      exclusive: false
+
+
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#spring:
+#  rabbitmq:
+#    addresses: ${amqpURL:amqp://guest:guest@localhost}
